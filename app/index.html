@@ -252,33 +252,44 @@
   <body>
     <div id='map'>
     </div>
-    <div id='globe'>
-      <iframe src="../WorldWeather/Deployment/index.html" frameborder="1" width="400" height="400"></iframe>
-    </div>
     <div class="sidebar" id='sidebar'>
       <div class='container' id='container'>
         flight plan
-        <div class='input' id='flightID-contain'>
-          flight id
-          <input type="text" id='flightID' />
-        </div>
         <div class='input' id='originCode-contain'>
           origin code
-          <input type="text" id='originCode' />
+          <input type="text" id='originCode' class='text-field' />
         </div>
         <div class='input' id='destinationCode-contain'>
           destination code
-          <input type="text" id='destinationCode' />
+          <input type="text" id='destinationCode' class='text-field' />
         </div>
-        <div class='input' id='waypoints-contain'>
+        <div class='list' id='waypointList-container-one'>
           waypoints
-          <input type="text" id='waypoints' />
+          <div id='waypointList-container-two'>
+            <div class='pointlist'>
+              code
+              <div class='codename' id='oricode'>
+              </div><br />
+              uptime
+              <input class='coor' id='oritime' />
+            </div>
+            <div id='waypointList-container-three'></div>
+            <div class='pointlist'>
+              code
+              <div class='codename' id='descode'>
+              </div><br />
+              uptime
+              <input class='coor' id='destime'/>
+            </div>
+          </div>
         </div>
-        <div class='input' id='waypoints-contain'>
-          waypoints
-          <input type="text" id='waypoints' />
+        <div id='tools-container'>
+          <div id='addPoint'>
+          </div>
+          <div id='removePoint'>
         </div>
-        <iframe src="http://jag.cami.jccbi.gov/cariprofile.asp" frameborder="0" width="200" height="200"></iframe>
+        </div>
+        <iframe src="http://jag.cami.jccbi.gov/cariprofile.asp" frameborder="0" width="200" height="200" id='form'></iframe>
       </div>
     </div>
   </body>

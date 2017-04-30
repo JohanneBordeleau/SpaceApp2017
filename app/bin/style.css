@@ -22,20 +22,11 @@ html,body{
 }
 #map{
   width: 70vw;
-  height: 50vh;
+  height: 100vh;
   position: absolute;
   left: 0px;
   z-index: 1;
   box-shadow: 0px 0px 2vw black;
-}
-#globe{
-  width: 70vw;
-  height: 50vh;
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  z-index: 1;
-  z-index: -10;
 }
 .sidebar{
   width: 30vw;
@@ -73,18 +64,29 @@ iframe{
   margin-top:1vh;
   width: 24vw;
   height:3vh;
-  border-radius: 0.5vw;
+  border-radius: 0.5vh;
   border: 0;
   font-size: 2vh;
   background-color: #4a5e63;
   line-height: 3vh;
   padding-left: 1vw;
 }
-#flightID{
+.list{
+  margin-top:1vh;
+  width: 24vw;
+  height:40vh;
+  border-radius: 0.5vh;
+  border: 0;
+  font-size: 2vh;
+  background-color: #4a5e63;
+  line-height: 3vh;
+  padding-left: 1vw;
+}
+.text-field{
   margin-left: 0.5vw;
   width:10.5vw;
   position: absolute;
-  border-radius: 0 0.5vw 0.5vw 0;
+  border-radius: 0 0.5vh 0.5vh 0;
   border: 0;
   height: 2.6vh;
   right: 0px;
@@ -95,11 +97,107 @@ iframe{
   background-color: #2a3335;
   color: #b3d8cd;
 }
-#flightID:hover{
+.text-field:hover{
 }
-#flightID:active{
+.text-field:active{
   outline:none;
 }
-#flightID:focus{
+.text-field:focus{
+  outline:none;
+}
+#waypointList-container-two{
+  width: 24vw;
+  height: 37vh;
+  margin-left: -1vw;
+  border-radius: 0 0 0.5vh 0.5vh;
+  border: 0;
+  font-size: 2vh;
+  background-color: #2a3335;
+  line-height: 3vh;
+  padding-left: 1vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#addPoint{
+  background-image: url('../res/plus.png');
+  background-size: 4vh 4vh;
+  width: 4vh;
+  height: 4vh;
+  position: absolute;
+  left: 7vw;
+  cursor: pointer;
+}
+#removePoint{
+  background-image: url('../res/minus.png');
+  background-size: 4vh 4vh;
+  width: 4vh;
+  height: 4vh;
+  position: absolute;
+  right: 7vw;
+  cursor: pointer;
+}
+#tools-container{
+  margin-top: 1vh;
+  width: 25vw;
+  height: 4vh;
+}
+::-webkit-scrollbar {
+  width: 0.5vw;
+}
+#waypointList-container-two::-webkit-scrollbar-track {
+  display: none;
+}
+
+#waypointList-container-two::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+}
+
+#waypointList-container-two::-webkit-scrollbar-button {
+      display: none;
+}
+
+::-webkit-scrollbar-corner {
+      display: none;
+}
+.pointlist{
+  width:25vw;
+  height: 7vh;
+  border-bottom: 1px solid #4a5e63;
+  margin-left: -1vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+.codename{
+  font-size: 2vh;
+  font-family: 'Arimo', sans-serif;
+  color: #b3d8cd;
+  display:inline;
+  width:6vh;
+  height: 2vh;
+  background-color: inherit;
+  border: 0;
+  margin-left: 1vw;
+  border-bottom: 1px solid #688e8a;
+  font-variant: small-caps;
+}
+.codename:focus{
+  border-bottom: 1px solid #8bbfb9;
+  outline:none;
+}
+.coor{
+  font-size: 2vh;
+  font-family: 'Arimo', sans-serif;
+  color: #b3d8cd;
+  display:inline;
+  width:6vh;
+  height: 2vh;
+  background-color: inherit;
+  border: 0;
+  margin-left: 1vw;
+  border-bottom: 1px solid #688e8a;
+  font-variant: small-caps;
+}
+.coor:focus{
+  border-bottom: 1px solid #8bbfb9;
   outline:none;
 }

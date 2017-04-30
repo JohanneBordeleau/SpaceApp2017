@@ -1,7 +1,8 @@
 var files = [
-
+  'bin/waypointHandler.js',
+  'bin/appearWindow.js',
   'bin/fieldUpdater.js',
-  'bin/flightQuery.js'
+  'bin/formRequester.js'
 ];
 
 files.forEach(function(elm){
