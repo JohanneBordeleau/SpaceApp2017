@@ -15,13 +15,20 @@ app.use('/flight',function(req,res){
   };
   https.request(option3,function(response){
     var rspData = '';
+
     response.on('data',function(chunk){
       rspData += chunk;
     });
+
     response.on('end',function(){
+
+     console.log('Flight Plan ' + JSON.parse(rspData)['id']);
+
       const data = JSON.parse(rspData);
+
       if(data.message != '' || data.message != undefined){
         console.log('api.flightplandatabase.com: ' + data.message,response.headers);
+
         res.end('');
       }
       else{
@@ -44,7 +51,7 @@ app.use('/flight',function(req,res){
         route = route + ']';
         console.log('api.flightplandatabase.com: ' + route);
         res.end(route);
-      }
+     }
     });
 
   }).end();
