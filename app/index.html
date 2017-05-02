@@ -3,12 +3,14 @@
   <head>
     <link rel="stylesheet" type="text/css" href="bin/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+
     <script>
       var map;
-      var center = {lat: 50, lng: 50.644};
+      // var center = {lat: 50, lng: 50.644};
+      var wp1 = {lat: 43.67, lng: -79.62};
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: center,
+          center: wp1,
           zoom: 8,
           mapTypeId: 'terrain',
           styles:[
@@ -245,6 +247,30 @@
             }
           ]
         });
+
+        var marker1 = new google.maps.Marker({position: wp1});
+        marker1.setMap(map);
+        var infowindow1 = new google.maps.InfoWindow({
+          content:"Radiation = 0.01 microsieverts"
+          });
+        infowindow1.open(map,marker1);
+
+        var wp2 = {lat: 61.08, lng: -94.1};
+        var marker2 = new google.maps.Marker({position: wp2});
+        marker2.setMap(map);
+        var infowindow2 = new google.maps.InfoWindow({
+          content:"Radiation = 0.02 microsieverts"
+          });
+        infowindow2.open(map,marker2);
+
+        var wp3 = {lat: 81.2, lng: -69.1};
+        var marker3 = new google.maps.Marker({position: wp3});
+        marker3.setMap(map);
+        var infowindow3 = new google.maps.InfoWindow({
+          content:"Radiation = 0.1 microsieverts"
+          });
+        infowindow3.open(map,marker3);
+
       }
     </script>
     <script type="text/javascript" src="bin/linker.js"></script>
@@ -252,46 +278,23 @@
   <body>
     <div id='map'>
     </div>
+    <div class='container' id='sphere'>
+      <iframe src="../WorldWeather/Development/apps/index.html" frameborder="0" style="position: fixed; left: 0; button: 0; width: 70%; height: 50%; z-index: 100"></iframe>
+    </div>
     <div class="sidebar" id='sidebar'>
-      <div class='container' id='container'>
+      <div class='container' id='container' frameborder="0">
         flight plan
         <div class='input' id='originCode-contain'>
-          origin code
-          <input type="text" id='originCode' class='text-field' />
-        </div>
-        <div class='input' id='destinationCode-contain'>
-          destination code
-          <input type="text" id='destinationCode' class='text-field' />
+          Flight Id
+          <input type="text" id='flightId' class='text-field' />
         </div>
         <div class='list' id='waypointList-container-one'>
           waypoints
-          <div id='waypointList-container-two'>
-            <div class='pointlist'>
-              code
-              <div class='codename' id='oricode'>
-              </div><br />
-              uptime
-              <input class='coor' id='oritime' />
-            </div>
-            <div id='waypointList-container-three'></div>
-            <div class='pointlist'>
-              code
-              <div class='codename' id='descode'>
-              </div><br />
-              uptime
-              <input class='coor' id='destime'/>
-            </div>
+           <div id="list"><p><iframe src="res/TestFlightPlan.txt" frameborder=0 ></iframe></p></div>
           </div>
-        </div>
-        <div id='tools-container'>
-          <div id='addPoint'>
-          </div>
-          <div id='removePoint'>
-        </div>
-        </div>
-        <iframe src="http://jag.cami.jccbi.gov/cariprofile.asp" frameborder="0" width="200" height="200" id='form'></iframe>
+      <div class='container' id='radiation'>
+        <iframe src="http://jag.cami.jccbi.gov/cariprofile.asp" frameborder="0" style="position: fixed; right: 0; buttom: 0; width: 30%; height: 50%; z-index: 100"></iframe>
       </div>
-    </div>
   </body>
   <script type="text/javascript" src="/gMaps"></script>
 </html>
